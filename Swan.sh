@@ -37,3 +37,6 @@ chmod +x computing-provider
 ./computing-provider wallet import private.key
 
 ./computing-provider account create --ownerAddress $wallet_address --ubi-flag=true
+
+nohup ./computing-provider ubi daemon >> cp.log 2>&1 &
+
