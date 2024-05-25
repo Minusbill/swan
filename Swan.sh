@@ -4,8 +4,6 @@ read -p "请输入 ECP IP 地址: " ECP_IP
 
 ECP_PORT=9085
 
-read -p "请输入自定义 ECP 节点名称: " node_name
-
 read -p "请输入你的密钥 (不能带 0x 开头): " private_key
 if [[ $private_key == 0x* ]]; then
   echo "密钥不能带 0x 开头"
@@ -32,7 +30,7 @@ wget https://github.com/swanchain/go-computing-provider/releases/download/v0.4.7
 
 chmod +x computing-provider
 
-./computing-provider init --multi-address=/ip4/$ECP_IP/tcp/$ECP_PORT --node-name=$node_name
+./computing-provider init --multi-address=/ip4/$ECP_IP/tcp/$ECP_PORT --node-name=swannode
 
 ./computing-provider wallet import private.key
 
